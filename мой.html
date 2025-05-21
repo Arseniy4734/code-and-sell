@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code & Sell — Магазин сайтов и Telegram-ботов</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #0a0a1a;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 800px;
+            margin: 20px auto;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 3em;
+            margin-bottom: 30px;
+            text-shadow: 0 0 10px #00f3ff, 0 0 20px #00f3ff;
+            animation: glow 2s infinite alternate;
+        }
+        
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px #00f3ff, 0 0 20px #00f3ff;
+            }
+            to {
+                text-shadow: 0 0 15px #00f3ff, 0 0 30px #00f3ff, 0 0 40px #00f3ff;
+            }
+        }
+        
+        .product {
+            background: rgba(20, 20, 50, 0.7);
+            border: 2px solid #00f3ff;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 0 15px rgba(0, 243, 255, 0.5);
+        }
+        
+        .product h2 {
+            color: #00f3ff;
+            margin-top: 0;
+        }
+        
+        .price {
+            font-size: 1.5em;
+            color: #fff;
+            margin: 10px 0;
+        }
+        
+        .btn {
+            background: linear-gradient(45deg, #0066ff, #00f3ff);
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn:hover {
+            background: linear-gradient(45deg, #00f3ff, #0066ff);
+            box-shadow: 0 0 10px rgba(0, 243, 255, 0.7);
+        }
+        
+        .details {
+            display: none;
+            background: rgba(0, 10, 30, 0.9);
+            padding: 15px;
+            margin-top: 10px;
+            border-radius: 5px;
+            border-left: 3px solid #00f3ff;
+        }
+        
+        .active {
+            display: block;
+        }
+        
+        footer {
+            margin-top: 30px;
+            color: #777;
+            font-size: 0.9em;
+            text-align: center;
+        }
+        
+        .requisites {
+            margin-top: 10px;
+            padding: 10px;
+            background: rgba(0, 10, 30, 0.7);
+            border-radius: 5px;
+            border: 1px dashed #00f3ff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Code & Sell</h1>
+        
+        <div class="product">
+            <h2>Покупка сайта</h2>
+            <div class="price">от 250 ₽ — 2 000 ₽</div>
+            <button class="btn" onclick="toggleDetails('site-details')">Подробнее</button>
+            <a href="https://t.me/arseniy5810" class="btn">Купить (Telegram)</a>
+            <div id="site-details" class="details">
+                <p>🔹 Готовые сайты под ключ</p>
+                <p>🔹 Адаптивный дизайн</p>
+                <p>🔹 Поддержка после покупки</p>
+                <button class="btn" onclick="toggleDetails('site-details')">Назад</button>
+            </div>
+        </div>
+        
+        <div class="product">
+            <h2>Покупка Telegram-бота</h2>
+            <div class="price">от 120 ₽ — 2 000 ₽</div>
+            <button class="btn" onclick="toggleDetails('bot-details')">Подробнее</button>
+            <a href="https://t.me/arseniy5810" class="btn">Купить (Telegram)</a>
+            <div id="bot-details" class="details">
+                <p>🔹 Автоматизация задач</p>
+                <p>🔹 Готовые решения</p>
+                <p>🔹 Интеграция с API</p>
+                <button class="btn" onclick="toggleDetails('bot-details')">Назад</button>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>© 2024 Code & Sell. Все права защищены.</p>
+        <div class="requisites">
+            <p><strong>Реквизиты для оплаты:</strong></p>
+            <p>2202 2068 9820 4339</p>
+        </div>
+    </footer>
+    
+    <script>
+        function toggleDetails(id) {
+            const details = document.getElementById(id);
+            details.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
